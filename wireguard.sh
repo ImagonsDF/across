@@ -91,10 +91,10 @@ _nic() {
 }
 
 _port() {
-    local port="$(shuf -i 1024-20480 -n 1)"
+    local port="$(shuf -i 10024-50000 -n 1)"
     while true; do
         if _exists "netstat" && netstat -tunlp | grep -w "${port}" > /dev/null 2>&1; then
-            port="$(shuf -i 1024-20480 -n 1)"
+            port="$(shuf -i 10024-50000 -n 1)"
         else
             break
         fi
